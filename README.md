@@ -8,6 +8,7 @@ provide your GitHub app id and secret in `application.yml`
 with `WebConfig.USE_CUSTOMIZER` is set to **false**
 - run application
 - open localhost:8080
+
 app should
 - redirect to GitHub login page
 - log "attributes" containing the 'registration_id' entry
@@ -16,6 +17,7 @@ app should
 with `WebConfig.USE_CUSTOMIZER` is set to **true**
 - run application
 - open localhost:8080
+
 app should
 - fail to finish oidc logic
 - throw `java.lang.IllegalArgumentException: registrationId cannot be empty`
