@@ -17,7 +17,7 @@ import static org.springframework.security.oauth2.client.web.OAuth2Authorization
 @Configuration
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
-    private final static boolean USE_CUSTOMIZER = true;
+    private final static boolean USE_CUSTOMIZER = false;
 
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
