@@ -17,6 +17,8 @@ import static org.springframework.security.oauth2.client.web.OAuth2Authorization
 @Configuration
 public class WebConfig extends WebSecurityConfigurerAdapter {
 
+    private final static boolean USE_CUSTOMIZER = true;
+
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
 
@@ -32,7 +34,9 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
         DefaultOAuth2AuthorizationRequestResolver delegate = new DefaultOAuth2AuthorizationRequestResolver(clientRegistrationRepository, DEFAULT_AUTHORIZATION_REQUEST_BASE_URI);
 
         // if customizer is set, attributes logged (in line 52) will not contain OAuth2ParameterNames.REGISTRATION_ID
-        // delegate.setAuthorizationRequestCustomizer(builder -> builder.attributes(map -> map.put("test", "value")));
+        if (USE_CUSTOMIZER) {
+            delegate.setAuthorizationRequestCustomizer(builder -> builder.attributes(map -> {}));
+        }
 
         return new AttributesLoggingResolver(delegate);
     }
