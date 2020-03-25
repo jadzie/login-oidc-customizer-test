@@ -5,7 +5,7 @@ https://spring.io/guides/tutorials/spring-boot-oauth2/ - with authorization requ
 provide your GitHub app id and secret in `application.yml`
 
 # proper flow 
-with `WebConfig.USE_CUSTOMIZER` is set to **false**
+with `WebConfig.USE_CUSTOMIZER` set to **false**
 - run application
 - open localhost:8080
 
@@ -14,7 +14,7 @@ app should
 - log "attributes" containing the 'registration_id' entry
 
 # bug replication 
-with `WebConfig.USE_CUSTOMIZER` is set to **true**
+with `WebConfig.USE_CUSTOMIZER` set to **true**
 - run application
 - open localhost:8080
 
